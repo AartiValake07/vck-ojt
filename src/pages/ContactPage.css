@@ -1,6 +1,6 @@
 .Da{
     background-color: aqua;
-    width: 1500px;
+    width: 1530px;
   }
 .contact{
    background-color: white ;
@@ -8,6 +8,9 @@
   padding: 2em;
   margin: 200px;
   padding-bottom: 10px;
+  margin-top:50px ;
+  margin-left: 350px;
+  margin-bottom: 1px;
 }
 .dd{
   text-align: center;

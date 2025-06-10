@@ -2,9 +2,9 @@
   background-color: aqua;
   text-align: center;
   border-radius: 1em;
-  padding: 3em;
+  padding: 0em;
   margin: 1px;
-  width: 1450px;
+  width: 1515px;
 }
 
  .aa{
@@ -19,7 +19,10 @@
     background-color: white;
     padding: 6em;
     border-radius: 2em ;
-    
+    margin: 100px;
+    margin-left: 300px;
+    margin-bottom: 1px;
+    margin-top: 50px;
 }
 
 .button{

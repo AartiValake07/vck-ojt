@@ -17,7 +17,7 @@ const CoursesPage = () => {
             
             <h2>Discover Campus Life</h2>
             
-               <video src="public/Videos/college-tour-FAmcnyfF.mp4" width="700" height="300"controls></video>
+               <video src="/Videos/college-tour-FAmcnyfF.mp4" width="700" height="300"controls></video>
                <p >Get a glimpse of the vibrant academic and social life at Vivekanand College.</p>
             
             <h2>Undergraduate Programs (UG)</h2>

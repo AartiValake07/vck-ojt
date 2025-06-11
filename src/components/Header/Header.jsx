@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './Header.css';
+
+
 const Header = () => {
     const [menuOpen, setMenuOpen]= useState(false);
 
@@ -8,9 +10,9 @@ const Header = () => {
         setMenuOpen(menuOpen);
     };
 
-    // const closeMenu = () => {
-    //     setMenuOpen(false);
-    // };
+     const closeMenu = () => {
+         setMenuOpen(false);
+    };
     return (
         <div>
 
@@ -28,23 +30,23 @@ const Header = () => {
         
                 </nav>
                 <button className="hamburger" onClick={toggleMenu}>
-
+                 ☰   
                 </button>
                 </div>
-            {/* <div>
+             <div className={`mobile-menu ${menuOpen ? 'show' : ''}`}>
                 <Link to="/" onClick={closeMenu} className="mobile-link">Home</Link>
                 <Link to="/about" onClick={closeMenu} className="mobile-link">About</Link>
                 <Link to="/courses" onClick={closeMenu} className="mobile-link">Courses</Link>
                 <Link to="/contact" onClick={closeMenu} className="mobile-link">Contact</Link>
                 <Link to="/admissions" onClick={closeMenu} className="mobile-link">Apply Now!</Link>
                 
-            </div> */}
+            </div> 
             
         </header>
      </div>
   
         
-    )
-}
+    );
+};
 
 export default Header;

@@ -9,13 +9,12 @@ const HomePage = () => {
         <div className="all" >
             <Header/>
                 
-                <div className="aa">
+            <div className="home" id="scroller" >
+               <div className="aa">
                     <h1>Welcome to Vivekanand College!</h1>
                     <h2>Your journey to excellence starts here.</h2>
                     <Link to="/admissions" className="button">Apply Now!</Link>
-                </div>
-            <div className="home" id="scroller" >
-                
+                </div> 
             
             <p>**Vivekanand College is a premier educational institution dedicated 
                 to fostering academic excellence, innovation, and holistic development. 

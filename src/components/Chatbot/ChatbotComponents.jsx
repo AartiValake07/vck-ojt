@@ -5,6 +5,7 @@ import { SIMILARITY_THRESHOLD } from "../../utils/constants"; // Path adjusted
 import "./Chatbot.css";
 import useOnlineStatus from "../../hooks/useOnlineStatus";
 import KNOWLEDGE_BASE_DATA from "../../data/knowledgeBase.json";
+
 const ChatbotComponent = () => {
   const [messages, setMessages] = useState([
     { text: KNOWLEDGE_BASE_DATA.greeting.response, sender: "bot" },
@@ -53,11 +54,11 @@ const ChatbotComponent = () => {
       setLoading(false);
       return "Please wait, I'm still getting ready...";
     }
-    try {
+    try  {       /*try- process successfully run   */
       const userEmbedding = await getEmbeddings(userMessageText); // we recieve vectors
-      let bestMatch = { intent: "default", score: 0 };
+      let bestMatch = { intent: "default", score: 0 };  //bestMatch- 
       for (const intent in preparedKnowledgeBase) {
-        if (intent === "default") continue;
+        if (intent === "default") continue;  //=== - strictly value and datatype check                //== - only value check
         const intentEmbeddings =
           preparedKnowledgeBase[intent].exampleEmbeddings;
         if (intentEmbeddings.length === 0) continue;
@@ -68,7 +69,7 @@ const ChatbotComponent = () => {
           }
         }
       }
-      console.log(
+      console.log(   //console.log- use for value print
         `Best matching intent: ${bestMatch.intent} with score: ${bestMatch.score}`
       );
       if (bestMatch.score >= SIMILARITY_THRESHOLD) {
@@ -76,7 +77,7 @@ const ChatbotComponent = () => {
       } else {
         return preparedKnowledgeBase.default.response;
       }
-    } catch (error) {
+    } catch (error) {  //catch- use for error define
       console.error("Error fetching AI response:", error);
       if (error.message.includes("429")) {
         return "I'm experiencing high traffic right now. Please try again in a moment.";
@@ -93,8 +94,8 @@ const ChatbotComponent = () => {
     if (inputValue.trim() === "") return;
     const userMessageText = inputValue;
     const newUserMessage = { text: userMessageText, sender: "user" };
-    setMessages((prevMessages) => [...prevMessages, newUserMessage]);
-    setInputValue("");
+    setMessages((prevMessages) => [...prevMessages, newUserMessage]);   //... - spread operator use in array []
+    setInputValue("");                                                   //... - rest operator use in paranthesis ()
     if (!isOnline) {
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -173,17 +174,17 @@ const ChatbotComponent = () => {
               {messages.map((message, index) => (
                 <div key={index} className={`message-row ${message.sender}`}>
                   {message.sender === "bot" && (
-                    <div className="avatar bot-avatar">:robot_face:</div>
+                    <div className="avatar bot-avatar">👨‍💻</div>
                   )}
                   <p className={`${message.sender}-message`}>{message.text}</p>
                   {message.sender === "user" && (
-                    <div className="avatar user-avatar">:bust_in_silhouette:</div>
+                    <div className="avatar user-avatar">👤</div>
                   )}
                 </div>
               ))}
               {loading && (
                 <div className="message-row bot">
-                  <div className="avatar bot-avatar">:robot_face:</div>
+                  <div className="avatar bot-avatar">👨‍💻</div>
                   <p className="bot-message loading-indicator">Typing...</p>
                 </div>
               )}

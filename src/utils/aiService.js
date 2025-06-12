@@ -24,7 +24,7 @@ export const getEmbeddings = async (text) => {
     throw new Error(`HTTP error! Status: ${response.status} - ${errorText}`);
   }
   const data = await response.json();
-  return data.embedding.values;
+  return data.embedding.values;  //Ai- return a numeric value
 };
 /**
  * Calculates the cosine similarity between two vectors.

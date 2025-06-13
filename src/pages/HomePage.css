@@ -10,7 +10,7 @@
  .aa{
   color: white;
   background-color:white;
-  text-align: center;
+  text-align: center; 
   background-image: url(/Images/vck.jpeg);
    border-radius: 1em;
    margin-bottom: 5px;
@@ -48,4 +48,8 @@
 img{
   height: 200px;
   width: 200px;
+}
+
+.ss{
+  text-align: left;
 }

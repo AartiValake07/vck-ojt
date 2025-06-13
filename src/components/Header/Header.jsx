@@ -10,9 +10,9 @@ const Header = () => {
         setMenuOpen(menuOpen);
     };
 
-     const closeMenu = () => {
-          setMenuOpen(false);
-     };
+    //  const closeMenu = () => {
+    //       setMenuOpen(false);
+    //  };
     return (
         <div>
 
@@ -33,14 +33,14 @@ const Header = () => {
                  ☰   
                 </button> 
                 </div>
-              <div className={`mobile-menu ${menuOpen ? 'show' : ''}`}>
+              {/* <div className={`mobile-menu ${menuOpen ? 'show' : ''}`}>
                 <Link to="/" onClick={closeMenu} className="mobile-link">Home</Link>
                 <Link to="/about" onClick={closeMenu} className="mobile-link">About</Link>
                 <Link to="/courses" onClick={closeMenu} className="mobile-link">Courses</Link>
                 <Link to="/contact" onClick={closeMenu} className="mobile-link">Contact</Link>
                 <Link to="/admissions" onClick={closeMenu} className="mobile-link">Apply Now!</Link>
                 
-            </div>  
+            </div>   */}
             
         </header>
      </div>
